@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Z:/SisInfo2/PlatEDU/src/Recursos/Captura%20de%20pantalla%202024-04-12%20232626.png</file>
             <file>file:/Z:/SisInfo2/PlatEDU/src/Main/Main.java</file>
             <file>file:/Z:/SisInfo2/PlatEDU/src/BDfx/Conection.java</file>
             <file>file:/Z:/SisInfo2/PlatEDU/src/Interfaces/Home.java</file>
             <file>file:/Z:/SisInfo2/PlatEDU/src/Recursos/Home.svg</file>
+=======
+            <file>file:/C:/Users/ASUS/Desktop/SistemasDeInformacion2/PlataformaEducativa/src/Interfaces/PDF.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/SistemasDeInformacion2/PlataformaEducativa/src/Interfaces/Materia.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/SistemasDeInformacion2/PlataformaEducativa/src/BDfx/Conection.java</file>
+>>>>>>> 4f528308fc82f28d89a482e62d8e35e69704bd0a
         </group>
     </open-files>
 </project-private>

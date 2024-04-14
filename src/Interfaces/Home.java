@@ -12,6 +12,7 @@ import javax.swing.JPanel;
  *
  * @author alfredoDEV
  */
+<<<<<<< HEAD
 public class Home extends javax.swing.JFrame {
 
     /**
@@ -423,4 +424,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel panelLateral;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
+=======
+public class Home {
+    
+    
+>>>>>>> 4f528308fc82f28d89a482e62d8e35e69704bd0a
 }
