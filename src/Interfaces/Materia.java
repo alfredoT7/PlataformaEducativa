@@ -2,17 +2,33 @@
 package Interfaces;
 
 import java.awt.Image;
+import java.awt.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class Materia extends javax.swing.JFrame {
-
-    String cadena ="jenjcnKCNNMCMELKWHJECNmncekjcnmsnckjcenhbcbdnxcmnxbchdbenshdbMNCNMBHD";
+    
+    private int indicebtn;
+    private ArrayList<JButton> botones;
+    private ArrayList<JLabel> labels;
+    private int indicelbl;
+    
+    String cadena ="jenj";
     public Materia() {
         initComponents();
+        indicebtn = 0;
+        indicelbl = 0;
+        labels = new ArrayList<>();
+        botones = new ArrayList<>();
+        
         
         ImageIcon imagen = new ImageIcon("src/Recursos/imageclase1.jpg");
         Icon iconoEscalado = new ImageIcon(imagen.getImage().getScaledInstance(lblPortada.getWidth(), lblPortada.getHeight(), Image.SCALE_DEFAULT));
@@ -20,11 +36,11 @@ public class Materia extends javax.swing.JFrame {
         lblComentario.setText("<html><p>Anunciar algo</p><p> con la Clase</p></html>");
         lblSeleccionarA.setText("<html><p>Agregar Archivo </p><p>   Adjunto</p></html>");
         btnGetClave.setText("<html><p>Obtener clave </p><p>de la clase</p></html>");
-        lbl1.setText("Gustavo");
+       /* lbl1.setText("Gustavo");
         btn1.setText("<html><center>"+cadena+"<html>");
         lbl2.setText("LUIS");
         btn2.setText("<html><center>"+cadena+"<html");
-        
+        */
     }
 
 
@@ -41,10 +57,6 @@ public class Materia extends javax.swing.JFrame {
         txtAcomentario = new javax.swing.JTextArea();
         scrollTablon = new javax.swing.JScrollPane();
         panelTablon = new javax.swing.JPanel();
-        lbl1 = new javax.swing.JLabel();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        lbl2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblAsignatura = new javax.swing.JLabel();
         lblPortada = new javax.swing.JLabel();
@@ -59,7 +71,7 @@ public class Materia extends javax.swing.JFrame {
             }
         });
 
-        btnSeleccionar.setText("Seleccionar...");
+        btnSeleccionar.setText("Seleccionar y Guardar");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarActionPerformed(evt);
@@ -76,28 +88,10 @@ public class Materia extends javax.swing.JFrame {
         txtAcomentario.setRows(5);
         scrollComentario.setViewportView(txtAcomentario);
 
-        panelTablon.setBackground(java.awt.Color.white);
-        panelTablon.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lbl1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        panelTablon.add(lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 560, 110));
-
-        btn1.setText("jButton1");
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
-        panelTablon.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 60, 540, 60));
-
-        btn2.setText("jButton1");
-        panelTablon.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 223, 420, 80));
-
-        lbl2.setBackground(new java.awt.Color(204, 255, 204));
-        lbl2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lbl2.setOpaque(true);
-        panelTablon.add(lbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 530, 140));
-
+        panelTablon.setBackground(new java.awt.Color(255, 255, 255));
+        panelTablon.setMaximumSize(new java.awt.Dimension(100, 32787978));
+        panelTablon.setOpaque(false);
+        panelTablon.setLayout(new java.awt.GridLayout(0, 1));
         scrollTablon.setViewportView(panelTablon);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,11 +127,9 @@ public class Materia extends javax.swing.JFrame {
                                 .addComponent(txtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(245, 245, 245))
-                                    .addComponent(scrollComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(scrollComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEnviar)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
@@ -166,7 +158,7 @@ public class Materia extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnGetClave, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(txtContrasenia))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(scrollTablon, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
         );
@@ -184,17 +176,36 @@ public class Materia extends javax.swing.JFrame {
         pdf.seleccionar_pdf(btnSeleccionar);
         
     }//GEN-LAST:event_btnSeleccionarActionPerformed
-
+    int x=10;
+    int y=10;
+    int ancho=300;
+    int alto=50;
     private void btnGetClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetClaveActionPerformed
         // TODO add your handling code here:
         txtContrasenia.setText(contrasenia);
+        JLabel label=new JLabel("Label"+indicelbl);
+        label.setAlignmentY(BOTTOM_ALIGNMENT);
+        label.setBounds(x, y, ancho, alto);
+        panelTablon.add(label);
+        y = y+alto+5;
+        indicelbl++;
+        JButton boton=new JButton("<html><center>Boton"+indicebtn+"BFJENJKENDJEDNJKDNUJNJNHJBFHRFBHWBHAWDJANWJjcjwnjcnejncwjncwjcbherbfhb<p>fjkebihbjdshljkldcknjnrjbrhyvbecbrhbchjrebcjcbhebcehjbchjberhbchrebhcbcbhrebchNDNJDQWNJW<html>");
+        boton.setBounds(x, y, ancho, alto);
+        panelTablon.add(boton);
+        y = y+alto;
+        indicebtn++;
+        
+        boton.addActionListener(new ActionListener(){
+            
+            public void actionPerformed(ActionEvent e){
+            System.out.println(boton.getText());
+            }
+        });
+        
+        panelTablon.updateUI();
+        
+        
     }//GEN-LAST:event_btnGetClaveActionPerformed
-
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        // TODO add your handling code here:
-        PDF pdf = new PDF();
-        pdf.ejecutar_archivoPDF(3);
-    }//GEN-LAST:event_btn1ActionPerformed
 
     
     public void iniciarMateria(Materia materia) {
@@ -211,7 +222,7 @@ public class Materia extends javax.swing.JFrame {
         
     }
      
-     private String contrasenia;
+    private String contrasenia;
     public void getClaveClase(String contrasenia){
         this.contrasenia = contrasenia;
     }
@@ -232,14 +243,10 @@ public class Materia extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnGetClave;
     private javax.swing.JButton btnSeleccionar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lbl1;
-    private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lblAsignatura;
     private javax.swing.JLabel lblComentario;
     private javax.swing.JLabel lblPortada;

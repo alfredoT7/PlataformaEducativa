@@ -27,8 +27,8 @@ public class PDF {
         PreparedStatement ps = null;
         try {
             ps = conec.conectar().prepareStatement(sql);
-            ps.setInt(1, 4);
-            ps.setString(2, "Funciona2");
+            ps.setInt(1, 6);
+            ps.setString(2, "MATEMATICAS");
             ps.setBytes(3, rutaArchivo);
             ps.executeUpdate();
         } catch (SQLException ex) {
